@@ -1,4 +1,9 @@
 ```
-docker run -p 6379:6379 -v /home/apps/redis/redis.windows.conf:/usr/local/etc/redis/redis.conf -d --name myredis  redis redis-server /usr/local/etc/redis/redis.conf
+mkdir /home/apps/mysqldata
+cd /home/apps/mysqldata
+docker run -p 3306:3306 --name mymysql -v /etc/localtime:/etc/timezone:rw -v /etc/localtime:/etc/localtime:rw -v /home/apps/mysqldata:/var/lib/mysql -v /home/apps/mysqldata:/etc/mysql/conf.d -v /home/apps/mysqldata:/logs -e MYSQL_ROOT_PASSWORD=asdf@#123 -d mysql:5.6 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
+docker stop mymysql
+dcoker rm mymysql
 
 ```
