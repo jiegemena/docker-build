@@ -3,3 +3,18 @@
 
 
 ```
+```
+docker exec -it sql2 "bash"
+
+root@sql2:/# /opt/mssql/bin/mssql-conf set sqlagent.enabled true 
+SQL Server needs to be restarted in order to apply this setting. Please run
+'systemctl restart mssql-server.service'.
+root@sql2:/# exit
+exit
+[root@localhost ~]# 
+[root@localhost ~]# docker stop sql1
+sql1
+[root@localhost ~]# docker start sql1
+sql1
+
+```
